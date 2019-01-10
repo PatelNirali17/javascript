@@ -1,0 +1,140 @@
+
+<script>
+
+//string variables
+var myfirstName = "Nirali";
+var mylastName = "Patel";
+
+console.log(myfirstName,mylastName);
+
+// escaping literal quotes in strings
+
+var myStr = "I am a \"double quotes\" string inside \"double quotes\"" ;
+console.log(myStr);
+
+// quoting string with single quotes
+
+var mystr = '<a href="http://www.example.com" target="_blank">Link</a>';
+console.log(mystr);
+
+// escape sequences in string
+
+var mystr = "firstline\n\t\\secondline\nthirdline";
+console.log(mystr);
+
+// concatenating string with plus operating
+
+var ourstr = "I come first." + " I come second.";
+
+console.log(ourstr);
+
+// concatenating string with plus equal operating
+
+var ourstr = "I come first."; 
+ourstr += " I come second.";
+
+console.log(ourstr);
+
+// constructing string with variables
+
+var myName = "Nirali Patel";
+var mystr = "Hello, My name is " + myName + ", how are you?";
+console.log(mystr);
+
+// appending variables to string
+
+var someadjective = " wortwhile";
+var mystr = "Learning to code is";
+mystr += someadjective;
+console.log(mystr);
+
+// find length of string
+
+var firstnamelength = 0;
+var firstname = "Nirali";
+firstnamelength = firstname.length
+console.log(firstnamelength);
+
+// bracket notation to find first string character in string
+var firstletteroffirstname = "";
+var firstname = "Nirali";
+firstletteroffirstname = firstname[0];
+console.log(firstletteroffirstname);
+
+//string immutability
+var mystr = "jello world";
+mystr= "Hello world";
+console.log(mystr);
+
+// bracket notation to find nth string character in string
+var firstname = "Ada";
+var secondletteroffirstname = firstname[1];
+console.log(secondletteroffirstname);
+
+// bracket notation to find last string character in string
+firstname = "Ada";
+var lastletteroffirstname = firstname[firstname.length-1];
+console.log(lastletteroffirstname);
+
+// bracket notation to find nth-to-last string character in string
+firstname = "Nirali";
+var thirdtolastletteroffirstname = firstname[firstname.length-2];
+console.log(thirdtolastletteroffirstname);
+
+// word blanks
+function wordblanks(mynoun, myadjective, myverb, myadverb){
+    var result ="";
+    result = "The "+ myadjective +" " +  mynoun +" " +  myverb +" to the store " + myadverb;
+    return result;
+}
+console.log(wordblanks("dog", "big", "ran", "quickly"));
+
+// store multiple values with arrays
+var myarray = ["quincy",1]
+console.log(myarray);
+
+// nested array
+var ourarray = [["the universe", 42], ["everything", 101010]];
+console.log(ourarray);
+
+// access array data with indexes
+var ourarray = [50,60,70];
+var ourdata = ourarray[0];
+console.log(ourdata);
+
+// modify array data with indexes
+var myarray = [18,64,99];
+myarray[0]= 45;
+console.log(myarray);
+
+// access multi-dimensional arrays with indexes
+var myarray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12],13,14]];
+var mydata = myarray[2][1];
+console.log(mydata);
+
+// manipulate arrays with push
+var myarray = [["jhon", 23], ["cat", 2]];
+myarray.push = ["dog",3];
+console.log(myarray);
+// manipulate arrays with pop
+var myarray = [["jhon", 23], ["cat", 2]];
+var removefrommyarray = myarray.pop();
+console.log(myarray);
+
+// manipulate arrays with shift
+var myarray = [["jhon", 23], ["cat", 2]];
+var removefrommyarray = myarray.shift();
+console.log(myarray);
+
+// manipulate arrays with unshift
+var myarray = [["jhon", 23], ["cat", 2]];
+myarray.shift();
+myarray.unshift(["paul",35]);
+console.log(myarray);
+
+//shopping list
+var mylist = [["cereal",3], ["milk",2],["bananas", 3],["juice",2],["egg",5]];
+console.log(mylist);
+</script>
+
+

@@ -1,0 +1,559 @@
+<script>
+
+    // record collection
+    var collection = {
+        "2548": {
+            "album": "Slippery when Wet",
+            "artist": "Bon jovi",
+            "tracks": [
+                "Let It Rock",
+                "You Give Love a Bad Name"
+            ]
+        },
+        "2468": {
+            "album": "1999",
+            "artist": "Prince",
+            "tracks": [
+                "1999",
+                "Little Red Corvette"
+            ]
+        },
+        "1245": {
+            "artist": "Robert palmer",
+            "tracks": []
+        },
+        "5439": {
+            "album": "ABBA Gold",
+        }
+    };
+    var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+    function updateRecords(id, prop, value) {
+        if (value === "") {
+            delete collection[id][prop];
+        } else if (prop === "tracks") {
+            collection[id][prop] = collection[id][prop] || [];
+            collection[id][prop].push(value);
+        } else {
+            collection[id][prop] = value;
+        }
+        return collection;
+    }
+    console.log(updateRecords(2468, "tracks", "test"));
+    console.log(updateRecords(5439, "artist", "ABBA"));
+
+    // iterate with while loops
+    var myArray = [];
+
+    var i = 0;
+    while (i < 5) {
+        myArray.push(i);
+        i++;
+    }
+    console.log(myArray);
+
+    // iterate with for loops
+    var ourArray = [];
+
+    for (var i = 0; i < 5; i++) {
+        ourArray.push(i);
+    }
+
+    var myArray = [];
+
+    for (var i = 1; i < 6; i++) {
+        myArray.push(i);
+    }
+    console.log(myArray);
+
+    // iterate odd numbers with a for loops
+    var ourArray = [];
+
+    for (var i = 0; i < 10; i += 2) {
+        ourArray.push(i);
+    }
+    console.log(ourArray);
+    var myArray = [];
+
+    for (var i = 1; i < 10; i += 2) {
+        myArray.push(i);
+    }
+    console.log(myArray);
+
+    // count backwards with a for loop
+    var ourArray = [];
+
+    for (var i = 10; i > 0; i -= 2) {
+        ourArray.push(i);
+    }
+    console.log(ourArray);
+    var myArray = [];
+
+    for (var i = 9; i > 0; i -= 2) {
+        myArray.push(i);
+    }
+    console.log(myArray);
+
+    // itrate through an array with a for loop
+    var ourArr = [9, 10, 11, 12];
+    var ourTotal = 0;
+
+    for (var i = 0; i < ourArr.length; i++) {
+        ourTotal += ourArr[i];
+    }
+    console.log(ourTotal);
+
+    var myArr = [2, 3, 4, 5, 6];
+    var myTotal = 0;
+
+    for (var i = 0; i < myArr.length; i++) {
+        myTotal += myArr[i];
+    }
+    console.log(myTotal);
+
+    // nesting for loops
+    function multyplyAll(arr) {
+        var product = 1;
+
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr[i].length; j++) {
+                product *= arr[i][j]
+            }
+        }
+
+        return product;
+    }
+    var product = multyplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+    console.log(product);
+
+    //iterate with Do...while loops
+    var myArray = [];
+    var i = 10;
+
+    do {
+        myArray.push(i);
+        i++;
+    } while (i < 5)
+    console.log(i, myArray);
+
+    // profile lookup
+    var contacts = [
+        {
+            "firstName": "Akira",
+            "lastName": "Laine",
+            "number": "0543236543",
+            "likes": ["Pizza", "Coding", "Brownie point"]
+        },
+        {
+            "firstName": "Harry",
+            "lastName": "Potter",
+            "number": "0994372684",
+            "likes": ["Hogwarts", "Magic", "Hagrid"]
+        },
+        {
+            "firstName": "Sherlock",
+            "lastName": "Holmes",
+            "number": "0487345643",
+            "likes": ["Intriguing cases", "Violin"]
+        },
+        {
+            "firstName": "Kristian",
+            "lastName": "Vos",
+            "number": "unknown",
+            "likes": ["Javascript", "Gaming", "Foxes"]
+        }
+    ];
+
+    function lookUpProfile(name, prop) {
+        for (var i = 0; i < contacts.length; i++) {
+            if (contacts[i].firstName === name) {
+                return contacts[i][prop] || "No such property";
+            }
+        }
+        return "No such contact"
+    }
+
+    var data = lookUpProfile("Sherlock", "lastName");
+    console.log(data);
+
+    // generate random fractions
+    function randomFraction() {
+
+        return Math.random();
+    }
+    console.log(randomFraction());
+
+    // generate random whole numbers
+    var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+    function randomWholeNum() {
+
+        return Math.floor(Math.random() * 10);
+    }
+    console.log(randomWholeNum());
+
+    // generate random whole numbers within a range
+    function ourRandomRange(ourMin, ourMax) {
+        return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+    }
+    console.log(ourRandomRange(1, 9));
+
+    function randomRange(myMin, myMax) {
+        return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+    }
+    var myRandom = randomRange(5, 15)
+    console.log(myRandom);
+
+    // use the parseInt function
+    function convertToInteger(str) {
+        return parseInt(str);
+    }
+    convertToInteger("56");
+
+    // use the parseInt function with a radix
+    function convertToInteger(str) {
+        return parseInt(str, 2);
+    }
+    convertToInteger("10011");
+
+    //use the condition (ternary) operator
+    function checkEqual(a, b) {
+        return a === b ? true : false;
+
+        return a === b;
+    }
+    checkEqual(1, 2);
+
+    //use multiple condition (ternary) operator
+    function checkSign(num) {
+        return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+    }
+    console.log(checkSign(0));
+
+    // differences between the var amd let keyword
+    let catName = "Quincy";
+    let quote;
+
+    catName = "beau";
+
+    function catTalk() {
+        "use strict";
+
+        catName = "oliver";
+        quote = catName + "say meow!";
+    }
+
+    console.log(catTalk());
+
+    // compare scopes of the var and let keywords
+    function checkScope() {
+        "use strict";
+        var i = "function scope";
+        if (true) {
+            i = "block scope";
+            console.log("block scope i is: ", i);
+        }
+        console.log("function scope i is: ", i);
+        return i;
+    }
+    checkScope();
+
+    function checkScope1() {
+        "use strict";
+        let i = "function scope";
+        if (true) {
+            let i = "block scope";
+            console.log("block scope i is: ", i);
+        }
+        console.log("function scope i is: ", i);
+        return i;
+    }
+    checkScope1();
+
+    function checkScope2() {
+        "use strict";
+
+        if (true) {
+            var i = "block scope";
+            console.log("block scope i is: ", i);
+        }
+        console.log("function scope i is: ", i);
+        return i;
+    }
+    checkScope2();
+
+    function checkScope3() {
+        "use strict";
+
+        if (true) {
+            let i = "block scope";
+            console.log("block scope i is: ", i);
+        }
+        console.log("function scope i is: ", i);
+        return i;
+    }
+    checkScope3();
+
+    // declare a read-only variable with the const keyword
+    function printManyTimes(str) {
+        "use strict"
+
+        const SENTENCE = str + " is cool!";
+
+        for (let i = 0; i < str.length; i += 2) {
+            console.log(SENTENCE);
+        }
+    }
+    printManyTimes("freeCodeCamp");
+
+    // mutate an array declared with const
+    const s = [5, 7, 2];
+
+    function editInplace() {
+        "use strict";
+
+        s[0] = 2;
+        s[1] = 5;
+        s[2] = 7;
+    }
+    editInplace();
+    console.log(s);
+
+    // prevent object mutation
+    function freezeObj() {
+        "use strict";
+        const MATH_CONSTANTS = {
+            PI: 3.14
+        };
+
+        try {
+            MATH_CONSTANTS.PI = 99;
+        } catch (ex) {
+            console.log(ex);
+        }
+        return MATH_CONSTANTS.PI;
+    }
+    const PI = freezeObj();
+    console.log(PI);
+
+    // use arrow functions to write concise anonymous functions
+    const magic = () => new Date();
+
+    // write arrow functions with parameters
+    const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+    console.log(myConcat([1, 2], [3, 4, 5]));
+
+    // write higher order arrow functions
+    const realNumberarray = [4, 5.6, -9.8, 3.14, 42, 6, 8.43, -2];
+
+    const squareList = (arr) => {
+        const squareIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+        return squareIntegers;
+    };
+
+    const squareIntegers = squareList(realNumberarray);
+    console.log(squareIntegers);
+
+    // write higher order arrow functions
+    const increment = (function () {
+        return function increment(number, value = 1) {
+            return number + value;
+        };
+    })();
+    console.log(increment(5, 2));
+    console.log(increment(5));
+
+    // use the rest operator with function parameters
+    const sum = (function () {
+        return function sum(...args) {
+            return args.reduce((a, b) => a + b, 0);
+        };
+    })();
+    console.log(sum(1, 2, 3, 4));
+
+    // use the spread operator to evaluate arrays in-place
+    const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
+    let arr2;
+    (function () {
+        arr2 = [...arr1];
+        arr1[0] = 'potato';
+    })();
+    console.log(arr2);
+
+    // use destructuring assignment to assign variables from objects
+    var voxel = { x: 3.6, y: 7.4, z: 6.54 };
+
+    var x = voxel.x;
+    var y = voxel.y;
+    var z = voxel.z;
+
+    const { x: a, y: b, z: c } = voxel;
+
+    const AVG_TEMPERATURES = {
+        today: 77.5,
+        tomorrow: 79
+    };
+
+    function getTempOfTmrw(avgtemperatures) {
+        "use strict";
+
+        const { tomorrow: tempOfTomorrow } = avgtemperatures;
+        return tempOfTomorrow;
+    }
+    console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+    // destructuring assignment with nested objects
+
+    const LOCAL_FORECAST = {
+        today: { min: 72, max: 83 },
+        tomorrow: { min: 73.3, max: 84.6 }
+    };
+
+    function getMaxOfTmrw(forecast) {
+        "use strict";
+
+        const { tomorrow: { max: maxOfTomorrow } } = forecast;
+        return maxOfTomorrow;
+    }
+    console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+    // use destructuring assignment to assign variables from arrays
+    const [p, q, , r] = [1, 2, 3, 4, 5, 6];
+    console.log(p, q, r);
+
+    let e = 8, f = 6;
+    (() => {
+        "use strict";
+        [e, f] = [f, e];
+
+    })();
+    console.log(e);
+    console.log(f);
+
+    // use destructuring assignment with the rest operator
+    const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    function removeFirstTwo(list) {
+        const [, , ...arr] = list;
+        return arr;
+    }
+
+    const arr = removeFirstTwo(source);
+    console.log(arr);
+    console.log(source);
+
+    // use destructuring assignment to pass an object as a function's parameters
+    const state = {
+        max: 56.78,
+        standard_deviation: 4.34,
+        median: 43.54,
+        mode: 23.87,
+        min: -0.75,
+        average: 35.85
+    };
+    const half = (function () {
+        return function half({ max, min }) {
+            return (max + min) / 2.0;
+        }
+    })();
+    console.log(state);
+    console.log(half(state));
+
+    // create strings using template literals
+    const person = {
+        name: "Zodiac Hasbro",
+        age: 56
+    };
+    const greeting = `Hello, my name is ${person.name}!
+    I am ${person.age} years old.`;
+
+    console.log(greeting);
+
+    const result = {
+        success: ["max-length", "no-amd", "prefer-arrow-functions"],
+        failure: ["no-var", "var-no-top", "linebreak"],
+        skipped: ["id-blacklist", "no-dup-keys"]
+    };
+    function makeList(arr) {
+        const resultDisplayArray = [];
+        for (let i = 0; i < arr.length; i++) {
+            resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+        }
+        return resultDisplayArray;
+    }
+
+    const resultDisplayArray = makeList(result.failure);
+    console.log(resultDisplayArray);
+
+    // write concise object literal declarations using simple fields
+    const createPerson = (name, age, gender) => ({ name, age, gender });
+    console.log(createPerson("Zodiac Hasbro", 56, "male"));
+
+    // write concise declarative functions
+    const bicycle = {
+        gear: 2,
+        setGear(newGear) {
+            "use strict";
+            this.gear = newGear;
+        }
+    };
+    bicycle.setGear(3);
+    console.log(bicycle.gear);
+
+    // use class syntax to define a constructor function
+    class SpaceShuttle {
+        constructor(targetplanet) {
+            this.targetplanet = targetplanet;
+        }
+    }
+    var zeus = new SpaceShuttle('Jupiter');
+    console.log(zeus.targetplanet);
+
+
+    function makeClass() {
+        class Vegetable {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        return Vegetable;
+    }
+    const Vegetable = makeClass();
+    const carrot = new Vegetable('carrot');
+    console.log(carrot.name);
+
+    // use getters and setters to control access to an object
+    class Book {
+        constructor(author) {
+            this._author = author;
+        }
+        get writer() {
+            return this._author;
+        }
+        set writer(updatedAuthor) {
+            this._author = updatedAuthor;
+        }
+    }
+
+    function makeClass() {
+        class Thermostat {
+            constructor(temp) {
+                this._temp = 5 / 9 * (temp - 39);
+            }
+            get temperature() {
+                return this._temp;
+            }
+            set temperature(updatedTemp) {
+                this._temp = updatedTemp;
+            }
+        }
+        return Thermostat;
+    }
+
+    const Thermostat = makeClass();
+    const thermos = new Thermostat(76);
+    let temp = thermos.temperature;
+    thermos.temperature = 26;
+    temp = thermos.temperature;
+    console.log(temp);
+
+</script>
