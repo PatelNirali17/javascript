@@ -1,19 +1,54 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
 
-const names = ['John', 'Paul', 'George', 'Ringo', 'John'];
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
 
-function removeDups(names) {
-  let unique = {};
-  names.forEach(function(i) {
-    if(!unique[i]) {
-      unique[i] = true;
+<body>
+
+  <h1>Eiminate duplicate value from array</h1>
+
+
+  <script>
+
+    //for string
+    const names = ['John', 'Paul', 'George', 'Ringo', 'John'];
+
+    function removeDups(names) {
+      let unique = {};
+      names.forEach(function (i) {
+        if (!unique[i]) {
+          unique[i] = true;
+        }
+      });
+      return Object.keys(unique);
     }
-  });
-  return Object.keys(unique);
-}
 
-  console.log(removeDups(names));
-   
+    console.log(removeDups(names));
 
+    // for number 
+    var uniqueArray = function (arrArg) {
+      return arrArg.filter(function (elem, pos, arr) {
+        return arr.indexOf(elem) == pos;
+      });
+    };
 
-</script>
+    var uniqEs6 = (arrArg) => {
+      return arrArg.filter((elem, pos, arr) => {
+        return arr.indexOf(elem) == pos;
+      });
+    }
+
+    var test = [1, 2, 3, 3, 5, 7, 1];
+    var testBis = [1, 2, 3];
+    console.log(uniqueArray(test.concat(testBis)));
+
+  </script>
+
+</body>
+
+</html>
