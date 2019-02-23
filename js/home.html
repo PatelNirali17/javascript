@@ -1,0 +1,150 @@
+<!-- javascript fundamentals -->
+<html>
+
+<body>
+    <h1>javascript</h1>
+    <script>
+        console.log("Hello");
+
+        //variables(var,let,const)
+        var a;
+        a = 79;
+        console.log(a);
+        var a = 34;
+        console.log(a);
+        let x;
+        x = 74;
+        console.log(x);
+        const pi = 3.14;
+        console.log(pi);
+
+        // primitive data type(number,boolen,string,null,undefine)
+        let name = 'nirali';
+        let age = 23;
+        console.log(name);
+        console.log(age);
+        let option = true;
+        let height;
+        console.log(option);
+        console.log(height);
+        let eyecolor = null;
+        console.log(eyecolor);
+
+        //referance data type (array,object,function)
+        //array
+        //example
+        let shopping = [];
+        shopping = ['paintBrush', 'colorPlatte', 'canvas'];
+        console.log(shopping);
+        console.log(shopping[1]);
+        //example1
+        let numbers = [];
+        numbers = [1, 3, 2, 8, 4, 5, 6];
+        console.log(numbers[0] + numbers[1]);
+        console.log(numbers.sort());
+        numbers.push(7);
+        console.log(numbers);
+        //example2
+        let mix = [];
+        mix = ['one', 1, 'two', 2];
+        console.log(mix);
+        //object
+        let pen = {
+            type: 'ballpoint',
+            color: 'black',
+            cost: 10
+        };
+        //objectname.propertyname
+        //objectname['propertyname']
+        console.log(pen.cost);
+
+        let emily = {
+            age: 16,
+            school: 'DPS',
+            class: '10th std',
+            subject: ['physics', 'chemstry', 'biology', 'maths']
+        };
+        console.log(emily.subject[1]);
+        //function
+        function hello() {
+            console.log('hello');
+        }
+        hello();
+
+        function product(a, b) {
+            return a * b;
+        }
+        let Product = product(2, 6);
+        console.log(Product);
+
+        //conditional statements
+        let number = [];
+        number = [1, 2, 1, 2, 3, 2, 3, 1];
+        //if statement
+        if (number[0] == number[2]) {
+            console.log('correct');
+        }
+        //if-else
+        if (number[0] == number[4]) {
+            console.log('correct');
+        } else {
+            console.log('incorrect');
+        }
+
+        if (number[0] == number[2] || number[2] == number[6]) {
+            console.log('correct');
+        } else {
+            console.log('incorrect');
+        }
+
+         let i = 0;
+        //  while(i<5) {
+        //      console.log('The number is ' + i);
+        //      i++; 
+        //  }
+
+         do{
+            console.log('The number is ' + i);
+             i++; 
+         }while(i>5)
+
+         for(i=0;i<5;i++) {
+             console.log("The number is " + i);
+         }
+         for(i=0;i<50;i++) {
+             console.log(i + ". I am sorry");
+         }
+
+         //switch case
+         let games = 'football';
+         switch (games) {
+             case "theowball":
+             console.log("I hate throwball");
+             break;
+             case "basketball":
+             console.log("basketball is hard");
+             break;
+             case "cricket":
+             console.log("I'm a huge cricket fan");
+             break;
+             case "football":
+             console.log("I love football");
+             break;
+             default:
+             console.log("I like other game");
+             break;
+             
+         }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
