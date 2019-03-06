@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palindrome</title>
+</head>
+<body>
+    <form id="form_id">
+        <input type="text" id="your_input" />
+    </form>
+
+
+    <script>
+    
+    var isPalindrome = function (string) {
+    if (string == string.split('').reverse().join('')) {
+        alert(string + ' is palindrome.');
+    }
+    else {
+        alert(string + ' is not palindrome.');
+    }
+}
+
+document.getElementById('form_id').onsubmit = function() {
+   isPalindrome(document.getElementById('your_input').value);
+    return false;
+}
+    
+    </script>
+</body>
+</html>
